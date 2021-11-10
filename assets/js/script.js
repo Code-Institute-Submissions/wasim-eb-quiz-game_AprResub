@@ -100,4 +100,17 @@ function backToQuiz() {
 }
 
 
+function checkAnswer(){
+    var answerBank = document.getElementById
+    ('answerBank');
+    var answers = document.getElementById
+    ('answers');
+    answerBank.style.display = 'block';
+    scorecard.style.display = 'block';
+    for(var a=0;a<questionBank.length;a++)
+    {
+        
+    }
+}
+
 displayQuestion
