@@ -1,120 +1,139 @@
-//question bank
-var questionBank= [
-    {
-        question: 'Who played Marcus Aurelius?',
-        option: ['James Franco', 'Joaquin Phoenix', 'Richard Harris', 'Russell Crowe'],
-        answer: 'Richard Harris'
-    },
-    {
-        question: 'Finish this quote: "At my signal, ______ hell."',
-        option: ['release', 'unleash', 'enter', 'create'],
-        answer: 'unleash'
-    },
-    {
-        question: 'What 3-word phrase did soldiers say to each other as a sign of respect?',
-        option: ['"Strength and Honor"', '"Justice and Alliance"', '"Power and Wisdom"', '"Might and Will"'],
-        answer: '"Strength and Honor"'
-    },
-    {
-        question: 'Why did Hagen try a bit of Maximus food?',
-        option: [' He was hungry', 'He was greedy', 'To see if it was poisoned', 'Maximus did not want it'],
-        answer: 'To see if it was poisoned'
-    },
-    {
-        question: 'What was Maximus known as to the mob before everyone found out his name?',
-        option: ['Spaniard', 'Maximus', 'General', 'Illidan'],
-        answer: 'Spaniard'
-    },
-]
-
-var question = document.getElementById
-('question');
-var quizContainer = document.getElementById
-('quiz-container');
-var scorecard = document.getElementById
-('scorecard');
-var option0 = document.getElementById
-('option0');
-var option0 = document.getElementById
-('option1');
-var option0 = document.getElementById
-('option2');
-var option0 = document.getElementById
-('option3');
-var options = document.querySelector('.next');
-var points = document.getElementById('score');
-var span = document.querySelectorAll('span');
-var i=0;
-var score = 0;
-
-
-function displayQuestion() {
-    for(var a=0;a<span.length;a++){
-        span[a].style.background = 'none'
-    }
-    question.innerHTML = 'Q.'+(i+i)+' '
-    +questionBank[i].question;
-    option0.innerHTML = questionBank[1].option
-    [0];
-    option1.innerHTML = questionBank[1].option
-    [1];
-    option2.innerHTML = questionBank[1].option
-    [2];
-    option3.innerHTML = questionBank[1].option
-    [3];
-    stat.innerHTML = "Question"+' '+(i+i)+' '
-    +'of'+' '+questionBank.length;
-}
-
-function calscore(e) {
-    if(e.innerHTML===questionBank[i].answer &
-        & score<questionBank.length)
-        {
-            score = score+1;
-            document.getElementById(e.id).style.
-            background = 'limegreen'
-        } else {
-            document.getElementById(e.id).style.
-            background = 'tomato'
+var currentQuestion=0;
+    var totalScore=0;
+    var cQuestion=document.getElementById('currentQuestion');
+    var totalQuestions=document.getElementById('totalQuestions');
+    var splashSecreen=document.getElementById('start');
+    var quizScreen=document.getElementById('quiz-secreen');
+    var x=0;
+    var resultSecreen=document.getElementById('resultSecreen');
+    var timeLeft=document.getElementById('timeLeft');
+    var score=document.getElementById('score');
+    var question=document.getElementById('question');
+    var opt1=document.getElementById('opt1');
+    var opt2=document.getElementById('opt2');
+    var opt3=document.getElementById('opt3');
+    var opt4=document.getElementById('opt4');
+    var btn=document.getElementsByClassName('btn');
+    var next=document.getElementById('next');
+    var quizQuestions=[
+      {
+        question:"HTML is a ... ",
+        choice1:"Programming Language",
+        choice2:"Markup Language",
+        choice3:"Rebotic Language",
+        choice4:"Machine Language",
+        ans:"Markup Language",
+      },
+         {
+        question:"CSS stands for ... ",
+        choice1:"Cascading Style Sheet",
+        choice2:"Cascading Stylish Sheet",
+        choice3:"Case Senstive Sheet",
+        choice4:"Cascading Sence Sheet",
+        ans:"Cascading Style Sheet",
+      },
+         {
+        question:"Number of Headings available in HTML",
+        choice1:"4",
+        choice2:"6",
+        choice3:"7",
+        choice4:"8",
+        ans:"6",
+      },
+         {
+        question:"Famous Language use for AI...?",
+        choice1:"PHP",
+        choice2:"Python",
+        choice3:"JavaScript",
+        choice4:"Java",
+        ans:"Python",
+      },
+         {
+        question:"<ul> Tag is used for....",
+        choice1:"Ordred List",
+        choice2:"Unordred List",
+        choice3:"List Item",
+        choice4:"List",
+        ans:"Unordred List",
+      }
+    ];
+    function nextQuestion(no){
+    Inter(300);
+    cQuestion.textContent=" "+(no+1);
+    totalQuestions.textContent=" "+quizQuestions.length;
+    console.log("number "+no);
+    question.textContent=quizQuestions[no].question;
+    opt1.textContent=quizQuestions[no].choice1;
+    opt2.textContent=quizQuestions[no].choice2;
+    opt3.textContent=quizQuestions[no].choice3;
+    opt4.textContent=quizQuestions[no].choice4;
+  }
+    var z=setInterval(function(){
+        if(x==1){
+          clearInterval(z);
+          splashSecreen.style.display="none";
+          quizScreen.style.display="block";
+          nextQuestion(currentQuestion);
         }
-        setTimeout(nextQuestion, 300);
-}
-
-function nextQuestion() {
-    if(i<questionBank.length-1)
-    {
-        i=i+1;
-        displayQuestion();
-    } else {
-        points.innerHTML = score+ '/'+
-        questionBank.length;
-        quizContainer.style.display = 'block'
+        x++;
+    },2000);
+    for(var i=0;i<btn.length;i++){
+      btn[i].onclick=function(){
+        if(this.textContent==quizQuestions[currentQuestion].ans){
+            totalScore++;
+            if(currentQuestion<4){
+            clearInterval(bar);
+            currentQuestion++;
+            nextQuestion(currentQuestion);
+            console.log(totalScore);
+            }else{
+              endSecreen();
+            }
+        }
+        else{
+          if(currentQuestion<4){
+            currentQuestion++;
+            clearInterval(bar);
+            nextQuestion(currentQuestion);
+            console.log(totalScore);
+            }else{
+              endSecreen();
+            }
+        }
+      }
     }
-}
-
-next.addEventListener('click', nextQuestion);
-
-
-function backToQuiz() {
-    location.reload();
-}
-
-
-function checkAnswer(){
-    var answerBank = document.getElementById
-    ('answerBank');
-    var answers = document.getElementById
-    ('answers');
-    answerBank.style.display = 'block';
-    scorecard.style.display = 'block';
-    for(var a=0;a<questionBank.length;a++)
-    {
-        var list = document.createElement('li')
-        ;
-        list.innerHTML = questionBank[a].answer;
-        answers.appendChild(list);
+    var bar;
+    function endSecreen(){
+      quizScreen.style.display="none";
+      resultSecreen.style.display="block";
+      score.textContent=totalScore;
     }
-}
-
-
-displayQuestion
+    function Inter(set){
+    var statusTime=set;
+    timeLeft.style.width=statusTime+"px";
+    bar=setInterval(function(){
+     if(statusTime==0){
+         clearInterval(bar); 
+          if(currentQuestion<4){
+            currentQuestion++;
+            nextQuestion(currentQuestion);
+          }
+          else{
+            endSecreen();
+          } 
+           
+        }
+        timeLeft.style.width=statusTime+"px";
+        statusTime=statusTime-30;
+    },1000); 
+   }
+  next.onclick=function(){
+    if(currentQuestion<4){
+    currentQuestion++;
+    nextQuestion(currentQuestion);
+    }
+    else{
+      endSecreen();
+    }
+   
+  }

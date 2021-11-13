@@ -5,43 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Quiz Game</title>
+    <title>Home</title>
 </head>
 <body>
-    <img src="" alt="img" id="img" class="img">
-    <h1 id="title">Quiz Game</h1>
-
-    <div id="quiz-container">
-        <div class="questions">
-            <h2 id="questions"></h2>
-            <ol type="A">
-                <li class="option"><span id="option0" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option1" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option2" onclick="calcScore(this)"></span></li>
-                <li class="option"><span id="option3" onclick="calcScore(this)"></span></li>
-            </ol>
-            <h4 id="stats"></h4>
+    <body>
+        <div class="main-div">
+            <div class="quiz-app">
+            <div class="start" id="start" style="display: block;">
+            <img src="images/2080878.png" height="120px" width="120px" class="il"/>
+            <h1 class="app">Quiz App</h1>
+            <p id="code">&copy; Code by Wasim</p>
+            </div>
+              <div class="quiz" id="quiz-secreen" style="display:none;">          
+                <div class="time-bar">
+                <div class="time-left" id="timeLeft">
+                
+                </div>
+              </div>
+              <div class="question-no">
+                <h3 class="q-text">Questions<span id="currentQuestion"> 1</span> / <span id="totalQuestions"> 10</span></h3>
+                <h3 id="dots">.............................................................</h3>
+           </div>
+              <div class="qus">
+                <h1 id="question">Who is the first child of the john doe?</h1>
+    
+              </div>
+              <div class="choices">
+                <button class="btn" id="opt1">Mark Angel</button>
+                <button class="btn" id="opt2">Mark Angel</button>
+                <button class="btn" id="opt3">Mark Angel</button>
+                <button class="btn" id="opt4">Mark Angel</button>
+              </div>
+              <div class="next-btn">
+                <button id="next">Next</button>
+              </div>
+            </div>
+            <div class="result" id="resultSecreen" style="display: none;">
+               <img src="images/res.png" height="120px" width="120px" class="il"/>
+            <h1 class="app"> Score : <span id="score">6</span></h1>
+            <p id="code">&copy; Code by Wasim</p>
+    
+    
+            </div>
+            </div>
         </div>
 
-        <div class="buttons">
-            <button type="button" class="next">Next question</button>
-        </div>
-    </div>
-
-    <div id="scoreboard">
-        <img src="" alt="">
-        <h2 id="score-title">Your Score</h2>
-        <h2 id="score"></h2>
-        <button type="button" id="score-btn" onclick="backToQuiz">Back to quiz</button>
-        <button type="button" id="check-answers" onclick="checkAnswer">Check Answers</button>
-    </div>
-    
-    <div id="answerBank">
-        <h2>Answers :</h2>
-        <ol type="1"></ol>
-        <button type="button" id="score-btn" onclick="backToQuiz">Back to quiz</button>
-    </div>
-    
-    <script src="assets/js/script.js"></script>
+    <script type="text/javascript" src="/assets/js/script.js"></script>
 </body>
 </html>
