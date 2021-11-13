@@ -1,139 +1,99 @@
-var currentQuestion=0;
-    var totalScore=0;
-    var cQuestion=document.getElementById('currentQuestion');
-    var totalQuestions=document.getElementById('totalQuestions');
-    var splashSecreen=document.getElementById('start');
-    var quizScreen=document.getElementById('quiz-secreen');
-    var x=0;
-    var resultSecreen=document.getElementById('resultSecreen');
-    var timeLeft=document.getElementById('timeLeft');
-    var score=document.getElementById('score');
-    var question=document.getElementById('question');
-    var opt1=document.getElementById('opt1');
-    var opt2=document.getElementById('opt2');
-    var opt3=document.getElementById('opt3');
-    var opt4=document.getElementById('opt4');
-    var btn=document.getElementsByClassName('btn');
-    var next=document.getElementById('next');
-    var quizQuestions=[
-      {
-        question:"HTML is a ... ",
-        choice1:"Programming Language",
-        choice2:"Markup Language",
-        choice3:"Rebotic Language",
-        choice4:"Machine Language",
-        ans:"Markup Language",
-      },
-         {
-        question:"CSS stands for ... ",
-        choice1:"Cascading Style Sheet",
-        choice2:"Cascading Stylish Sheet",
-        choice3:"Case Senstive Sheet",
-        choice4:"Cascading Sence Sheet",
-        ans:"Cascading Style Sheet",
-      },
-         {
-        question:"Number of Headings available in HTML",
-        choice1:"4",
-        choice2:"6",
-        choice3:"7",
-        choice4:"8",
-        ans:"6",
-      },
-         {
-        question:"Famous Language use for AI...?",
-        choice1:"PHP",
-        choice2:"Python",
-        choice3:"JavaScript",
-        choice4:"Java",
-        ans:"Python",
-      },
-         {
-        question:"<ul> Tag is used for....",
-        choice1:"Ordred List",
-        choice2:"Unordred List",
-        choice3:"List Item",
-        choice4:"List",
-        ans:"Unordred List",
-      }
-    ];
-    function nextQuestion(no){
-    Inter(300);
-    cQuestion.textContent=" "+(no+1);
-    totalQuestions.textContent=" "+quizQuestions.length;
-    console.log("number "+no);
-    question.textContent=quizQuestions[no].question;
-    opt1.textContent=quizQuestions[no].choice1;
-    opt2.textContent=quizQuestions[no].choice2;
-    opt3.textContent=quizQuestions[no].choice3;
-    opt4.textContent=quizQuestions[no].choice4;
+const quizData = [
+    {
+        question: "Who played Marcus Aurelius?",
+        a: "James Franco",
+        b: "Joaquin Phoenix",
+        c: "Richard Harris",
+        correct: "c",
+    },
+    {
+        question: "Finish this quote: 'At my signal, ______ hell.' ",
+        a: "release",
+        b: "unleash",
+        c: "enter",
+        correct: "b",
+    },
+    {
+        question: "What 3-word phrase did soldiers say to each other as a sign of respect?",
+        a: "Strength and Honor",
+        b: "Justice and Alliance",
+        c: "Might and will",
+        correct: "a",
+    },
+    {
+        question: "Why did Hagen try a bit of Maximus food?",
+        a: "He was hungry",
+        b: "He was greedy",
+        c: "To see if it was poisoned",
+        correct: "c",
+    },
+    {
+        question: "What was Maximus known as to the mob before everyone found out his name?",
+        a: "Spaniard",
+        b: "Maximus",
+        c: "Illidan",
+        correct: "a",
+    },
+  ];
+  
+  const quiz = document.getElementById('quiz');
+  const answerElements = document.querySelectorAll('.answer');
+  const questionElement = document.getElementById('question');
+  const a_text = document.getElementById('a_text');
+  const b_text = document.getElementById('b_text');
+  const c_text = document.getElementById('c_text');
+  const submit = document.getElementById('submit');
+  
+  let currentQuiz = 0;
+  let score = 0;
+  
+  loadQuiz();
+  
+  function loadQuiz(){
+    deselectAnswers();
+  
+    const currentQuizData = quizData[currentQuiz];
+  
+    questionElement.innerText = currentQuizData.question;
+    a_text.innerText = currentQuizData.a;
+    b_text.innerText = currentQuizData.b;
+    c_text.innerText = currentQuizData.c;
   }
-    var z=setInterval(function(){
-        if(x==1){
-          clearInterval(z);
-          splashSecreen.style.display="none";
-          quizScreen.style.display="block";
-          nextQuestion(currentQuestion);
+  
+  function deselectAnswers(){
+    answerElements.forEach(answerEl => answerEl.checked = false)
+  }
+  
+  function getSelected(){
+    let answer;
+  
+    answerElements.forEach(answerEl => {
+        if(answerEl.checked){
+            answer = answerEl.id;
         }
-        x++;
-    },2000);
-    for(var i=0;i<btn.length;i++){
-      btn[i].onclick=function(){
-        if(this.textContent==quizQuestions[currentQuestion].ans){
-            totalScore++;
-            if(currentQuestion<4){
-            clearInterval(bar);
-            currentQuestion++;
-            nextQuestion(currentQuestion);
-            console.log(totalScore);
-            }else{
-              endSecreen();
-            }
+    });
+  
+    return answer;
+  }
+  
+  submit.addEventListener('click', () => {
+    const answer = getSelected();
+  
+    if(answer){
+        if(answer === quizData[currentQuiz].correct){
+            score++;
+        }
+  
+        currentQuiz++;
+  
+        if(currentQuiz < quizData.length){
+            loadQuiz();
         }
         else{
-          if(currentQuestion<4){
-            currentQuestion++;
-            clearInterval(bar);
-            nextQuestion(currentQuestion);
-            console.log(totalScore);
-            }else{
-              endSecreen();
-            }
+            quiz.innerHTML = `<h2>You answered corectly at ${score}/${quizData.length} questions</h2>
+            <button onclick="location.reload()">Reload</button>
+            `;
         }
-      }
     }
-    var bar;
-    function endSecreen(){
-      quizScreen.style.display="none";
-      resultSecreen.style.display="block";
-      score.textContent=totalScore;
-    }
-    function Inter(set){
-    var statusTime=set;
-    timeLeft.style.width=statusTime+"px";
-    bar=setInterval(function(){
-     if(statusTime==0){
-         clearInterval(bar); 
-          if(currentQuestion<4){
-            currentQuestion++;
-            nextQuestion(currentQuestion);
-          }
-          else{
-            endSecreen();
-          } 
-           
-        }
-        timeLeft.style.width=statusTime+"px";
-        statusTime=statusTime-30;
-    },1000); 
-   }
-  next.onclick=function(){
-    if(currentQuestion<4){
-    currentQuestion++;
-    nextQuestion(currentQuestion);
-    }
-    else{
-      endSecreen();
-    }
-   
-  }
+  });
+  

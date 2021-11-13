@@ -1,55 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head>      
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Home</title>
+    <meta name="HandheldFriendly" content="true">
+    <meta name = "format-detection" content = "telephone=no">
+        
+    <title>Quiz Project</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css"  href="assets/css/style.css" />
+
 </head>
 <body>
-    <body>
-        <div class="main-div">
-            <div class="quiz-app">
-            <div class="start" id="start" style="display: block;">
-            <img src="images/2080878.png" height="120px" width="120px" class="il"/>
-            <h1 class="app">Quiz App</h1>
-            <p id="code">&copy; Code by Wasim</p>
-            </div>
-              <div class="quiz" id="quiz-secreen" style="display:none;">          
-                <div class="time-bar">
-                <div class="time-left" id="timeLeft">
-                
-                </div>
-              </div>
-              <div class="question-no">
-                <h3 class="q-text">Questions<span id="currentQuestion"> 1</span> / <span id="totalQuestions"> 10</span></h3>
-                <h3 id="dots">.............................................................</h3>
-           </div>
-              <div class="qus">
-                <h1 id="question">Who is the first child of the john doe?</h1>
+<div class="quiz-box" id="quiz">
+    <div class="quiz-header">
+        <h2 id="question">Question text</h2>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="a" class="answer">
+                <label for="a" id="a_text">Question</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="b" class="answer">
+                <label for="b" id="b_text">Question</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="c" class="answer">
+                <label for="c" id="c_text">Question</label>
+            </li>
+        </ul>
+    </div>
+    <button id="submit">Submit</button>
+</div>
     
-              </div>
-              <div class="choices">
-                <button class="btn" id="opt1">Mark Angel</button>
-                <button class="btn" id="opt2">Mark Angel</button>
-                <button class="btn" id="opt3">Mark Angel</button>
-                <button class="btn" id="opt4">Mark Angel</button>
-              </div>
-              <div class="next-btn">
-                <button id="next">Next</button>
-              </div>
-            </div>
-            <div class="result" id="resultSecreen" style="display: none;">
-               <img src="images/res.png" height="120px" width="120px" class="il"/>
-            <h1 class="app"> Score : <span id="score">6</span></h1>
-            <p id="code">&copy; Code by Wasim</p>
-    
-    
-            </div>
-            </div>
-        </div>
-
-    <script type="text/javascript" src="/assets/js/script.js"></script>
-</body>
+ <!-- Scripts -->
+ <script src="assets/js/script.js"></script>
+</body>  
 </html>
