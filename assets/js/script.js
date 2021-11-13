@@ -109,8 +109,12 @@ function checkAnswer(){
     scorecard.style.display = 'block';
     for(var a=0;a<questionBank.length;a++)
     {
-        
+        var list = document.createElement('li')
+        ;
+        list.innerHTML = questionBank[a].answer;
+        answers.appendChild(list);
     }
 }
+
 
 displayQuestion
