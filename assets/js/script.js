@@ -1,3 +1,5 @@
+// A list of questions and their answers. Only one answer per question is correct.
+
 const quizData = [
     {
         question: "Who played Marcus Aurelius?",
@@ -36,61 +38,72 @@ const quizData = [
     },
   ];
   
-  const quiz = document.getElementById('quiz');
-  const answerElements = document.querySelectorAll('.answer');
-  const questionElement = document.getElementById('question');
-  const a_text = document.getElementById('a_text');
-  const b_text = document.getElementById('b_text');
-  const c_text = document.getElementById('c_text');
-  const submit = document.getElementById('submit');
+// Creates variables for the various html elements
+const quiz = document.getElementById('quiz');
+const answerElements = document.querySelectorAll('.answer');
+const questionElement = document.getElementById('question');
+const a_text = document.getElementById('a_text');
+const b_text = document.getElementById('b_text');
+const c_text = document.getElementById('c_text');
+const submit = document.getElementById('submit');
   
-  let currentQuiz = 0;
-  let score = 0;
-  
-  loadQuiz();
-  
-  function loadQuiz(){
+let currentQuestion = 0;
+let score = 0;
+
+// Starts the game
+loadQuestion();
+
+// Sets up a new question for the quiz
+function loadQuestion(){
     deselectAnswers();
   
-    const currentQuizData = quizData[currentQuiz];
-  
+    const currentQuizData = quizData[currentQuestion];
+    
+    // Sets up the current question and answers
     questionElement.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
     b_text.innerText = currentQuizData.b;
     c_text.innerText = currentQuizData.c;
-  }
-  
-  function deselectAnswers(){
+}
+
+// Deselects all the radio buttons
+function deselectAnswers(){
     answerElements.forEach(answerEl => answerEl.checked = false)
-  }
-  
-  function getSelected(){
+}
+// Gets the id of the selected radio button
+function getSelected(){
     let answer;
-  
+    // Loops through every radio button to find the selected one
     answerElements.forEach(answerEl => {
         if(answerEl.checked){
             answer = answerEl.id;
         }
     });
-  
+    // Returns the id number for the selected radio button
     return answer;
   }
   
-  submit.addEventListener('click', () => {
+// Defines the logic for the submit button (on-click)
+submit.addEventListener('click', () => {
+    // Gets the id number for the selected radio button
     const answer = getSelected();
-  
+    
     if(answer){
-        if(answer === quizData[currentQuiz].correct){
+        // Compares the user's selected answer to the correct answer
+        if(answer === quizData[currentQuestion].correct){
+            // Adds one point to the score
             score++;
         }
+        // Advances the question selector 
+        currentQuestion++;
   
-        currentQuiz++;
-  
-        if(currentQuiz < quizData.length){
-            loadQuiz();
+        // Checks if the end of the quiz has been reached
+        if(currentQuestion < quizData.length){
+            loadQuestion();
         }
+        // Gives feedback to the player
         else{
-            quiz.innerHTML = `<h2>You answered corectly at ${score}/${quizData.length} questions</h2>
+            quiz.innerHTML = `<h2>You answered correctly at ${score}/${quizData.length} questions</h2>
             <button onclick="location.reload()">Reload</button>
             `;
         }
