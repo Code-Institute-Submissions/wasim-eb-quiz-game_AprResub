@@ -17,9 +17,10 @@ h2{
   padding: 16px;
   text-align: center;
   margin: 0;
+  color: #ffffff;
 }
 .quiz-box{
-  background-color: #fff;
+  background-color: rgb(43, 33, 33);  opacity: 0.8;
   border-radius: 10px;
   box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
   width: 600px;
@@ -34,13 +35,14 @@ ul{
 }
 ul li{
   font-size: 20px;
+  color: #ffffff;
   margin: 15px 0;
 }
 ul li label{
   cursor: pointer;
 }
 button{
-  background-color: #5ec6eb;
+  background-color: #753f3f;
   border: none;
   display: block;
   width: 100%;
@@ -48,14 +50,14 @@ button{
   font-size: 20px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #000000;
+  color: #ffffff;
   padding: 15px;
   transition: all 0.5s ease;
 }
 button:hover{
-  background-color: #438faa;
+  background-color: #302424;
 }
 button:focus{
   outline: none;
-  background-color: #5ec6eb;
+  background-color: #302424;
 }
