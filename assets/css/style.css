@@ -9,7 +9,7 @@ body{
   height: 100vh;
   overflow: hidden;
   margin: 0;
-  background-image: url("../images/unsplashcolo.jpg"); no-repeat;
+  background-image: url("../images/unsplashcolo11.jpg"); no-repeat:
   background-position: center;
   background-size: cover;
 }
@@ -52,6 +52,8 @@ button{
   text-transform: uppercase;
   color: #ffffff;
   padding: 15px;
+}
+#submit{
   transition: all 0.5s ease;
 }
 button:hover{
@@ -59,5 +61,5 @@ button:hover{
 }
 button:focus{
   outline: none;
-  background-color: #302424;
+  background-color: #753f3f;
 }

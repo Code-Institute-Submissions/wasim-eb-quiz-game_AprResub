@@ -1,5 +1,4 @@
 // A list of questions and their answers. Only one answer per question is correct.
-
 const quizData = [
     {
         question: "Who played Marcus Aurelius?",
@@ -46,12 +45,44 @@ const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const submit = document.getElementById('submit');
+const playgame = document.getElementById('playgame');
+submit.style.visibility='hidden';
+c_text.style.visibility='hidden';
+b_text.style.visibility='hidden';
+a_text.style.visibility='hidden';
+questionElement.innerText = 'Welcome to the Gladiator Quizgame\nHere you will answer 5 questions about the Gladiator movie';
+answerElements.forEach(answerEl => {
+    answerEl.style.visibility='hidden';
+});
+// document.getElementById('a').style.visibility='hidden';
+// document.getElementById('b').style.visibility='hidden';
+// document.getElementById('c').style.visibility='hidden';
+
+
+playgame.addEventListener('click', () => {
+    playgame.style.visibility='hidden'
+    showElements();
+    loadQuestion();
+});
+
+
+
   
 let currentQuestion = 0;
 let score = 0;
 
+function showElements(){
+    submit.style.visibility='visible';
+    c_text.style.visibility='visible';
+    b_text.style.visibility='visible';
+    a_text.style.visibility='visible';
+    questionElement.style.visibility='visible';
+    answerElements.forEach(answerEl => {
+        answerEl.style.visibility='visible';
+    });
+}
 // Starts the game
-loadQuestion();
+// loadQuestion();
 
 // Sets up a new question for the quiz
 function loadQuestion(){
