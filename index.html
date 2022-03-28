@@ -15,27 +15,35 @@
 </head>
 
 <body>
+    <header>
+        <nav id="nav">
+            <span id="stats"></span>
+        </nav>
+    </header>
+
     <article class="quiz-box" id="quiz">
         <section class="quiz-header">
             <h2 id="question">Question text</h2>
             <ul>
                 <li>
                     <input type="radio" name="answer" id="a" class="answer">
-                    <label for="a" id="a_text">Question</label>
+                    <label for="a" id="a_text" class="answer-label">Question</label>
                 </li>
                 <li>
                     <input type="radio" name="answer" id="b" class="answer">
-                    <label for="b" id="b_text">Question</label>
+                    <label for="b" id="b_text" class="answer-label">Question</label>
                 </li>
                 <li>
                     <input type="radio" name="answer" id="c" class="answer">
-                    <label for="c" id="c_text">Question</label>
+                    <label for="c" id="c_text" class="answer-label">Question</label>
                 </li>
             </ul>
         </section>
         <button id="playgame">Start Game</button>
         <button id="submit">Submit</button>
     </article>
+
+    <footer id="footer">(C) Copyright 2022</footer>
 
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
