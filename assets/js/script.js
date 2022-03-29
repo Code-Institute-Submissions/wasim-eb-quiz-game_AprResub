@@ -45,8 +45,8 @@ const submit = document.getElementById('submit');
 const playgame = document.getElementById('playgame');
 const stats = document.getElementById('stats');
 let currentQuestion = 0;
-
 let score = 0;
+let intervalId = null;
 
 /**
  * 
@@ -66,8 +66,9 @@ function showAnswers(show) {
  */
 function addEventHandlers() {
     playgame.addEventListener('click', () => {
-        playgame.style.visibility = 'hidden'
+        playgame.style.visibility = 'hidden';
         showElements();
+        setTimer();
         loadQuestion();
     });
 
@@ -90,6 +91,7 @@ function addEventHandlers() {
             if (currentQuestion < quizData.length) {
                 loadQuestion();
             } else {
+                clearInterval(intervalId);
                 quiz.innerHTML = `<h2>You answered correctly at ${score}/${quizData.length} questions</h2>
                 <button onclick="location.reload()">Start again</button>
                 `;
@@ -149,6 +151,12 @@ function getSelected() {
     });
     // Returns the id number for the selected radio button
     return answer;
+}
+
+function setTimer() {
+    intervalId = setInterval(() => {
+        console.log('beep...');
+    }, 1000);
 }
 
 /**
