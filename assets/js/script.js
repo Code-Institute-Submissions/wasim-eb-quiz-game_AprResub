@@ -91,8 +91,16 @@ function addEventHandlers() {
             if (currentQuestion < quizData.length) {
                 loadQuestion();
             } else {
+                // Stops the timer
                 clearInterval(intervalId);
+                // Applicera en formel här
+                currentScore = 0
+                if (currentScore > localStorage.getItem('highscore')) {
+                    localStorage.setItem('highscore', currentScore)
+                }
+                // intervalID keeps track of the time in seconds
                 quiz.innerHTML = `<h2>You answered correctly at ${score}/${quizData.length} questions</h2>
+                <h2>You scored ${currentScore} points</h2>
                 <button onclick="location.reload()">Start again</button>
                 `;
             }
