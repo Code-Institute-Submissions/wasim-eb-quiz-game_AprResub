@@ -94,7 +94,7 @@ function addEventHandlers() {
                 // Stops the timer
                 clearInterval(intervalId);
                 // Applicera en formel här
-                currentScore = 0
+                currentScore = 
                 if (currentScore > localStorage.getItem('highscore')) {
                     localStorage.setItem('highscore', currentScore)
                 }
