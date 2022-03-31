@@ -36,6 +36,9 @@ const quizData = [{
     },
 ];
 
+const maxTopScores = 5;
+const STORAGE_KEY = 'gladiator-quiz';
+
 // Creates variables for the various html elements
 const quiz = document.getElementById('quiz');
 const answerElements = document.querySelectorAll('.answer');
@@ -44,9 +47,14 @@ const questionElement = document.getElementById('question');
 const submit = document.getElementById('submit');
 const playgame = document.getElementById('playgame');
 const stats = document.getElementById('stats');
+
+const playerNameFormContainer = document.getElementById("player-name-form-container");
+const form = document.getElementById('player-name-form');
+
 let currentQuestion = 0;
 let score = 0;
 let intervalId = null;
+let scores = [];
 
 /**
  * 
@@ -93,19 +101,87 @@ function addEventHandlers() {
             } else {
                 // Stops the timer
                 clearInterval(intervalId);
-                // Applicera en formel här
-                currentScore = 
-                if (currentScore > localStorage.getItem('highscore')) {
-                    localStorage.setItem('highscore', currentScore)
-                }
+
+                showPlayerNameForm();
+
                 // intervalID keeps track of the time in seconds
-                quiz.innerHTML = `<h2>You answered correctly at ${score}/${quizData.length} questions</h2>
-                <h2>You scored ${currentScore} points</h2>
-                <button onclick="location.reload()">Start again</button>
-                `;
+                // quiz.innerHTML = `<h2>You answered correctly at ${score}/${quizData.length} questions</h2>
+                // <h2>You scored ${currentScore} points</h2>
+                // <button onclick="location.reload()">Start again</button>
+                // `;
+                //renderScores();
             }
         }
     });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const playerName = event.target.elements['player-name'].value;
+        const value = localStorage.getItem(STORAGE_KEY);
+        if (value) {
+            scores = JSON.parse(value);
+        } else {
+            scores = [];
+        }
+
+        scores.push({
+            playerName: playerName,
+            score: score
+        });
+
+        // sort scores by score
+        scores.sort((a, b) => {
+            if (a.score < b.score) {
+                return -1;
+            }
+            if (a.score > b.score) {
+                return 1;
+            }
+            return 0;
+        });
+
+        // Pop removes the last player from the list of top players if there is an overflow
+        if (scores.length > maxTopScores) {
+            scores.pop();
+        }
+
+        // Converts the scores into a string and updates it in localStorage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(scores));
+        hidePlayerNameForm();
+        renderScores();
+    });
+}
+
+function showPlayerNameForm() {
+    playerNameFormContainer.classList.remove('hide');
+}
+
+function hidePlayerNameForm() {
+    playerNameFormContainer.classList.add('hide');
+}
+
+function renderScores() {
+    let table = document.createElement("table");
+    let header = table.createTHead();
+    let headers = header.insertRow(0);
+    headers.innerHTML = `<th class="position">Position</th>
+                        <th class="player-name">Player Name</th>
+                        <th class="score">Score</th>`;
+    let tblBody = document.createElement('tbody');
+    scores.forEach((item, index) => {
+        let tr = document.createElement("tr");
+        tr.innerHTML = `<td class="position">${index + 1}</td> 
+                        <td class="player-name">${item.playerName}</td>
+                        <td class="score">${item.score}</td>`;
+        if (item.currentPlayer) {
+            tr.classList.add('last-game');
+        }
+        tblBody.appendChild(tr);
+    });
+    table.appendChild(tblBody);
+
+    quiz.firstElementChild.remove();
+    quiz.appendChild(table);
 }
 
 /**
