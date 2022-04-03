@@ -41,14 +41,16 @@ I have used several technologies that have enabled this design to work:
 
 
 ## Features:
+* A button to start the game
 * Questions tab
 * Answers tab, showing three possible answers.
 * A button to submit your answer
 * Scores at the end of the quiz
+* Highscore feature
 
 
 ## Pages: 
-There is only one page for this simple quiz-game. 
+There is only one page for this simple quiz-game.
 
 ## Testing
 * I am happy to confirm that the website if very responsive on different browsers, such as Google Chrome (which I used to type the code), Mozilla Firefox and Internet Explorer. 
