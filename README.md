@@ -1,17 +1,42 @@
-# Quiz Game
+# Gladiator Quiz Game
 
-This quiz website responsive website where you can play a simple quiz game with a set five questions and three answers per question. The theme is the movie: Gladiator. 
+This website is produced to test your knowledge about the movie “Gladiator”. The website contains a quiz and is daily simple. The game comes with a set five questions and three answers per question. 
+
 Here is a link to the website: [Wasims quizgame](https://wasim-eb.github.io/quiz-game/)
 
 ![Page](./assets/images/responsivedesign.png)
 
-## Languages used:
-* HTML
-HTML was used to setup the basics for the website.
-* CSS
-CSS was used to give the website a very simplistic style
-* JavaScript
-JavaScript was used for the quiz-functions
+The website only contains one page, which is the Home page. The game is all build in a single window at the center of the page.
+This window contains different phases in the game:
+- The question phase
+- The ending phase
+- The high score
+
+## Technologies Used
+I have used several technologies that have enabled this design to work:
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+    - Used as the basic building block for the project and to structure the content.
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+    - Used to style all the web content across the project. 
+- [JavaScript](https://www.javascript.com/)
+    - Used for the responsive navbar, animated heading, quiz functionality & sound effects and high-scores leaderboard.
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+    - Used as a primary method of fixing spacing issues, finding bugs, and testing responsiveness across the project.
+- [GitHub](https://github.com/)
+    - Used to store code for the project after being pushed.
+- [Git](https://git-scm.com/)
+    - Used for version control by utilising the Gitpod terminal to commit to Git and Push to GitHub.
+- [Gitpod](https://www.gitpod.io/)
+    - Used as the development environment.
+- [Color Contrast Accessibility Validator](https://color.a11y.com/)
+    - Allowed me to test the colour contrast of my webpage.
+- [W3C Markup Validation Service](https://validator.w3.org/) 
+    - Used to validate all HTML code written and used in this webpage.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)
+    - Used to validate all CSS code written and used in this webpage.
+- [AmIResponsive](http://ami.responsivedesign.is/)
+    - Used to generate responsive image used in README file.
 
 
 
