@@ -82,3 +82,15 @@ footer{
 .hide {
   display: none;
 }
+
+table {
+  padding: 16px;
+  text-align: center;
+  width: 86vh;
+  color: #ffffff;
+}
+
+.highscore {
+  text-align: center;
+  
+}

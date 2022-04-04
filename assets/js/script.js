@@ -82,6 +82,52 @@ function addEventHandlers() {
 
     // Defines the logic for the submit button (on-click)
     submit.addEventListener('click', () => {
+        submitLogic();
+    });
+
+    form.addEventListener('submit', (event) => {
+        formLogic();
+    });
+}
+
+function formLogic(){
+    event.preventDefault();
+        const playerName = event.target.elements['player-name'].value;
+        const value = localStorage.getItem(STORAGE_KEY);
+        if (value) {
+            scores = JSON.parse(value);
+        } else {
+            scores = [];
+        }
+
+        scores.push({
+            playerName: playerName,
+            score: score
+        });
+
+        // sort scores by score
+        scores.sort((a, b) => {
+            if (a.score < b.score) {
+                return -1;
+            }
+            else if (a.score > b.score) {
+                return 1;
+            }
+            return 0;
+        });
+
+        // Pop removes the last player from the list of top players if there is an overflow
+        if (scores.length > maxTopScores) {
+            scores.pop();
+        }
+
+        // Converts the scores into a string and updates it in localStorage
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(scores));
+        hidePlayerNameForm();
+        renderScores();
+}
+
+function submitLogic(){
         // Gets the id number for the selected radio button
         const answer = getSelected();
 
@@ -112,44 +158,6 @@ function addEventHandlers() {
                 //renderScores();
             }
         }
-    });
-
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const playerName = event.target.elements['player-name'].value;
-        const value = localStorage.getItem(STORAGE_KEY);
-        if (value) {
-            scores = JSON.parse(value);
-        } else {
-            scores = [];
-        }
-
-        scores.push({
-            playerName: playerName,
-            score: score
-        });
-
-        // sort scores by score
-        scores.sort((a, b) => {
-            if (a.score < b.score) {
-                return -1;
-            }
-            if (a.score > b.score) {
-                return 1;
-            }
-            return 0;
-        });
-
-        // Pop removes the last player from the list of top players if there is an overflow
-        if (scores.length > maxTopScores) {
-            scores.pop();
-        }
-
-        // Converts the scores into a string and updates it in localStorage
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(scores));
-        hidePlayerNameForm();
-        renderScores();
-    });
 }
 
 function showPlayerNameForm() {
@@ -161,6 +169,10 @@ function hidePlayerNameForm() {
 }
 
 function renderScores() {
+   
+    document.createElement("h2");
+    let x = document.createElement("h2");
+    x.textContent = 'High score'
     let table = document.createElement("table");
     let header = table.createTHead();
     let headers = header.insertRow(0);
@@ -179,9 +191,20 @@ function renderScores() {
         tblBody.appendChild(tr);
     });
     table.appendChild(tblBody);
-
     quiz.firstElementChild.remove();
+    quiz.appendChild(x);
     quiz.appendChild(table);
+
+    //Remove event listener
+    submit.removeEventListener()
+    //Get back new event listener for Play Again
+     submit.innerHTML = 'Play Again'
+     submit.addEventListener('click', () => {
+         //Attempt a restart to the quiz
+         //Alla korrekta knappar etc ska visas. 
+         //Kanske spara firstElementChild i en variabel, så att vi kan visa det igen
+         //efter att play again har tryckts på?
+     })
 }
 
 /**
