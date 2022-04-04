@@ -23,7 +23,7 @@
     <!--- The quiz window which contains the questions, answer buttons
     and the highscore at the end-->
     <article class="quiz-box" id="quiz">
-        <section class="quiz-header">
+        <section class="quiz-header" id="quiz-header">
             <h2 id="question">Question text</h2>
             <ul>
                 <li>
@@ -41,13 +41,13 @@
             </ul>
         </section>
         <button id="playgame">Start Game</button>
-        <button id="submit">Submit</button>
+        <button class="hide" id="submit">Submit</button>
     </article>
     <!--- The high score container -->
     <div id="player-name-form-container" class="hide">
         <form id="player-name-form">
-            <h2 id="question">Enter Player Name</h2>
-            <label for="player-name" id="player-name" class="input-element">Player Name: </label>
+            <h2>Enter Player Name</h2>
+            <label for="player-name" class="input-element">Player Name: </label>
             <input type="text" name="player-name" id="player-name" required>
             <button type="submit">Ok</button>
         </form>
