@@ -47,6 +47,7 @@ I have used several technologies that have enabled this design to work:
 * A button to submit your answer
 * Scores at the end of the quiz
 * Highscore feature
+* Hidden timer that calculates the final score by combining the time elapsed with the correct answers
 
 - I wanted the game to have a very simple design as I'm usually very fond of the simplistic approach.
 - As part of the quiz design, I added visual stat count so that the user will know when they have answered a question correctly and the number of questions inside the quiz. This instant feedback will allow them to learn as they play the quiz.
