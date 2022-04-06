@@ -92,5 +92,10 @@ table {
 
 .highscore {
   text-align: center;
-  
+}
+
+header {
+  text-align: center;
+  position: fixed;
+  top: 0;
 }
