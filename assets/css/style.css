@@ -1,6 +1,7 @@
 *{
   box-sizing: border-box;
 }
+/* Background */
 body{
   font-family: 'Roboto', sans-serif;
   display: flex;
@@ -30,6 +31,8 @@ h2{
 .quiz-header{
   padding: 10px;
 }
+/* Questions */
+
 ul{
   list-style: none;
   padding: 0;
@@ -42,6 +45,8 @@ ul li{
 ul li label{
   cursor: pointer;
 }
+/* Button-style */
+
 button{
   background-color: #753f3f;
   border: none;
@@ -70,7 +75,6 @@ footer{
   padding: 10px 10px 0px 10px;
   bottom: 0;
   width: 100%;
-  /* Height of the footer*/ 
   height: 40px;
   color: #ffffff;
   text-align: center;
@@ -83,6 +87,7 @@ footer{
 .hide {
   display: none;
 }
+/* Player-form table */
 
 table {
   padding: 16px;

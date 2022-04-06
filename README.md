@@ -4,13 +4,13 @@ This website is produced to test your knowledge about the movie “Gladiator”.
 
 Here is a link to the website: [Wasims quizgame](https://wasim-eb.github.io/quiz-game/)
 
-![Page](./assets/images/responsivedesign.png)
+![Page](./assets/images/amiresponsive.png)
 
 The website only contains one page, which is the Home page. The game is all build in a single window at the center of the page.
 This window contains different phases in the game:
+- The start game window
 - The question phase
-- The ending phase
-- The high score
+- The high scores
 
 ## Technologies Used
 I have used several technologies that have enabled this design to work:
@@ -48,15 +48,35 @@ I have used several technologies that have enabled this design to work:
 * Scores at the end of the quiz
 * Highscore feature
 
+I wanted the game to have a very simple design as I'm usually very fond of the simplistic approach. The game has four major features:
+
+- The start game stage:
+![stargame-desk](./assets/images/startgame-desk.png)
+![stargame-mobile](./assets/images/startgame-mobile.png)
+
+- The questions-stage:
+![questions-desk](./assets/images/questions-desk.png)
+![questions-mobile](./assets/images/questions-mobile.png)
+
+- The player-form
+![playerform-desk](./assets/images/playerform-desk.png)
+![playerform-mobile](./assets/images/playerform-mobile.png)
+- The scoreboard
+![scoreboard-desk](./assets/images/scoreboard-desk.png)
+![scoreboard-mobile](./assets/images/scoreboard-mobile.png)
+
+
 
 ## Pages: 
 There is only one page for this simple quiz-game.
 
 ## Testing
-* I am happy to confirm that the website if very responsive on different browsers, such as Google Chrome (which I used to type the code), Mozilla Firefox and Internet Explorer. 
-* The website was also tested live on a Samsung Galaxy 10 and iPhone 12 with great success. 
-* Finally, I tested the webpage on the Responsive Design platform, also with great success. 
-* The works well in function and in looks.
+- I am happy to confirm that the website if very responsive on different browsers, such as Google Chrome (which I used to type the code), Mozilla Firefox and Internet Explorer. 
+- The website was also tested live on a Samsung Galaxy 10 and iPhone 12 with great success. 
+- Finally, I tested the webpage on the Responsive Design platform, also with great success. 
+- The works well in function and in looks.
+
+
 
 
 ## Bugs
@@ -66,11 +86,20 @@ I later realised that this issue can also be resolved by adding a single dot to 
 ## Validator testing:
 
 * The end result shows no errors in the HTML code. Check the results here: [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwasim-eb.github.io%2Fquiz-game%2F)
+![HTML-VALIDATOR](./assets/images/htmlvalid.png)
+
 * The CSS code is is also validated. Check the results here: [Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwasim-eb.github.io%2Fquiz-game%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+![CSS-VALIDATOR](./assets/images/cssvalid.png)
+
+* I used BeatifyTools to validate the javaScript code and it returned no errors. 
+![JAVASCRIPT-VALIDATOR](./assets/images/javascriptvalid.png)
+
+
 * No errors were found neither in the HTML nor the CSS code. 
 * I used lighthouse in the dev tools in Google Chrome to confirm the accessibilty on both mobile devices and desktops. 
 
-![LIGHTHOSE](./assets/images/lighthouse.png)
+![LIGHTHOUSE-DESKTOP](./assets/images/lighthousedesk.png)
+![LIGHTHOUSE-MOBILE](./assets/images/lighthousemobile.png)
 
 ## Unfixed bugs
 No unfixed bugs.
