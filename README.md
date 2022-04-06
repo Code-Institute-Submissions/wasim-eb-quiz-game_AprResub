@@ -4,7 +4,7 @@ This website is produced to test your knowledge about the movie “Gladiator”.
 
 Here is a link to the website: [Wasims quizgame](https://wasim-eb.github.io/quiz-game/)
 
-![Page](./assets/images/amiresponsive.png)
+![Page](./assets/images/responsivedesign-final.png)
 
 The website only contains one page, which is the Home page. The game is all build in a single window at the center of the page.
 This window contains different phases in the game:
