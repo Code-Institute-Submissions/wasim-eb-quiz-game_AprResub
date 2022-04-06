@@ -27,7 +27,7 @@ h2{
   overflow: hidden;
 }
 .quiz-header{
-  padding: 64px;
+  padding: 55px;
 }
 ul{
   list-style: none;
@@ -98,4 +98,23 @@ header {
   text-align: center;
   position: fixed;
   top: 0;
+}
+
+label.input-element {
+  color: #ffffff;
+}
+
+/* Media Queries */
+
+/* Small mobile screens */
+@media screen and (min-width: 370px) and (max-width: 425px) {
+  table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+    width: 100%;
+}
 }
