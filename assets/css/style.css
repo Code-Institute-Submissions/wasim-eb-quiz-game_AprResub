@@ -107,14 +107,29 @@ label.input-element {
 /* Media Queries */
 
 /* Small mobile screens */
-@media screen and (min-width: 370px) and (max-width: 425px) {
-  table {
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: grey;
-    width: 100%;
+@media screen and (min-width: 320px) and (max-width: 480px) {
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+  width: 100%;
+}
+button{
+  background-color: #753f3f;
+  border: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 15px;
+}
+.quiz-header{
+  padding: 7px;
 }
 }
