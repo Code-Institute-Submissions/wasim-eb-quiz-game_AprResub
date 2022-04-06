@@ -59,7 +59,7 @@ let scores = [];
 let elapsedTimeMS = 0;
 
 /**
- *
+ * Shows the answers when game starts
  */
 function showAnswers(show) {
   answerElements.forEach((el) => {
@@ -71,7 +71,7 @@ function showAnswers(show) {
   });
 }
 /**
- *
+ * 
  */
 function addEventHandlers() {
   playgame.addEventListener('click', () => {
@@ -87,6 +87,9 @@ function addEventHandlers() {
   form.addEventListener('submit', formLogic);
 }
 
+/**
+ * The form for the final scores
+ */
 function formLogic(event) {
   event.preventDefault();
   const playerName = event.target.elements['player-name'].value;
@@ -125,6 +128,9 @@ function formLogic(event) {
   renderScores();
 }
 
+/**
+ * Sets up the logic for the submit functions
+ */
 function submitLogic() {
   // Gets the id number for the selected radio button
   const answer = getSelected();
@@ -147,27 +153,29 @@ function submitLogic() {
       clearInterval(intervalId);
       currentQuestion = 0
       showPlayerNameForm();
-
-      // intervalID keeps track of the time in seconds
-      // quiz.innerHTML = `<h2>You answered correctly at ${score}/${quizData.length} questions</h2>
-      // <h2>You scored ${currentScore} points</h2>
-      // <button onclick="location.reload()">Start again</button>
-      // `;
-      // renderScores();
     }
   }
 }
 
+/**
+ * Shows the player name form when the game ends
+ */
 function showPlayerNameForm() {
   quiz.classList.add("hide")
   playerNameFormContainer.classList.remove('hide');
 }
 
+/**
+ * Hides the play name form when the game starts
+ */
 function hidePlayerNameForm() {
   quiz.classList.remove("hide")
   playerNameFormContainer.classList.add('hide');
 }
 
+/**
+ * Calculates the scores by combining the time elapsed and correct answers
+ */
 function renderScores() {
 
   const container = document.createElement("div")
@@ -259,12 +267,18 @@ function getSelected() {
   return answer;
 }
 
+/**
+ * Sets the timer to count down when the game starts
+ */
 function setTimer() {
   intervalId = setInterval(() => {
     elapsedTimeMS++;
   }, 1000);
 }
 
+/**
+ * Restarts the quiz game 
+ */
 function resetGame() {
   submit.removeEventListener("click", resetGame)
   document.getElementById("scores-container").remove()
