@@ -13,6 +13,7 @@ body{
   background-position: center;
   background-size: cover;
 }
+
 h2{
   padding: 16px;
   text-align: center;
@@ -27,7 +28,7 @@ h2{
   overflow: hidden;
 }
 .quiz-header{
-  padding: 55px;
+  padding: 10px;
 }
 ul{
   list-style: none;
@@ -131,11 +132,28 @@ button{
 }
 .quiz-header{
   padding: 7px;
+  font-size: 10px;
 }
 h2{
   padding: 16px;
   text-align: center;
   margin: 0;
   color: #ffffff;
+  font-size: 149%;
+}
+.quiz-box{
+  background-color: rgb(43, 33, 33);  opacity: 0.8;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  width: 600px;
+  overflow: hidden;
+}
+#stats {
+  font-size: 13px;
+}
+ul li{
+  font-size: 12px;
+  color: #ffffff;
+  margin: 10px 0;
 }
 }

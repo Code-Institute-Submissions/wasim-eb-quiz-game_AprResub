@@ -99,7 +99,7 @@ function formLogic(event) {
   } else {
     scores = [];
   }
-
+// Calculates the final score
   const finalScore = (score * 1000) - elapsedTimeMS;
 
   scores.push({
@@ -174,7 +174,7 @@ function hidePlayerNameForm() {
 }
 
 /**
- * Calculates the scores by combining the time elapsed and correct answers
+ * Shows the player-form, final scoreboard and the button to play again
  */
 function renderScores() {
 
@@ -242,7 +242,8 @@ function loadQuestion() {
     el.innerText = answers[index];
   });
 
-  stats.innerText = `Question ${currentQuestion}/${quizData.length} \nCorrect Answers: ${score}`;
+  stats.classList.remove('hide');
+  stats.innerText = `Question ${currentQuestion +1}/${quizData.length} \nCorrect Answers: ${score}`;
 }
 
 /**
@@ -298,6 +299,8 @@ function startGame() {
   submit.style.visibility = 'hidden';
   showAnswers(false);
   questionElement.innerText = 'Welcome to the Gladiator Quizgame\nHere you will answer 5 questions about the Gladiator movie';
+  submit.innerHTML = 'Submit';
+  stats.classList.add('hide');
   addEventHandlers();
 }
 
