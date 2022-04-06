@@ -48,7 +48,9 @@ I have used several technologies that have enabled this design to work:
 * Scores at the end of the quiz
 * Highscore feature
 
-I wanted the game to have a very simple design as I'm usually very fond of the simplistic approach. The game has four major features:
+- I wanted the game to have a very simple design as I'm usually very fond of the simplistic approach.
+- As part of the quiz design, I added visual stat count so that the user will know when they have answered a question correctly and the number of questions inside the quiz. This instant feedback will allow them to learn as they play the quiz.
+The game has four major features:
 
 - The start game stage:
 ![stargame-desk](./assets/images/startgame-desk.png)
@@ -71,10 +73,12 @@ I wanted the game to have a very simple design as I'm usually very fond of the s
 There is only one page for this simple quiz-game.
 
 ## Testing
-- I am happy to confirm that the website if very responsive on different browsers, such as Google Chrome (which I used to type the code), Mozilla Firefox and Internet Explorer. 
+- I am happy to confirm that the website is very responsive on different browsers, such as Google Chrome (which I used to type the code), Mozilla Firefox and Internet Explorer. 
 - The website was also tested live on a Samsung Galaxy 10 and iPhone 12 with great success. 
 - Finally, I tested the webpage on the Responsive Design platform, also with great success. 
-- The works well in function and in looks.
+- The website works well in function and in looks.
+Throughout the entire project, I have used Google Chrome Developer Tools to debug any issues with styling and alignment; this tool enabled me to change things and see the effect this had immediately. The use of the console whilst in dev tools was also incredibly helpful as I was able to utilise this to test my JavaScript code, using `console.log()` to check that my functions were being called correctly and that the desired information was going to be displayed. This was pivotal in designing the quiz as I needed to have access to the information of the various elements in order to be able to programme the quiz correctly.
+
 
 
 
@@ -102,7 +106,11 @@ I later realised that this issue can also be resolved by adding a single dot to 
 ![LIGHTHOUSE-MOBILE](./assets/images/lighthousemobile.png)
 
 ## Unfixed bugs
-No unfixed bugs.
+As of right now, there are no unfixed bugs.
+
+## Potential future features
+- I want to make the game broader by adding more quizzes for different movies.
+- The user should also be able to navigate between the different quizzes.
 
 ## Deployment
 I deployed this website by using GitPages and following the below steps:
@@ -139,8 +147,10 @@ Cloning your repository will allow you to download a local version of the reposi
 
 
 ## Credits
+Lots of appreciation and a big thank you to my mentor at Code institute for providing the necessary help to finish this project. 
+
 
 ### Coding content
-* Most of my coding was used by myself. 
+* Most of my coding was used by myself and various youtube guides on javaScript.
 * I used [W3Schools](https://www.w3schools.com/) as my main source for codes. I also had to make a lot of google searching for the javaScript content.
 * I had to go back a few times and look at older coding from my previous project and I also used some codes from the Love Maths project.
