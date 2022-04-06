@@ -103,8 +103,8 @@ I later realised that this issue can also be resolved by adding a single dot to 
 * No errors were found neither in the HTML nor the CSS code. 
 * I used lighthouse in the dev tools in Google Chrome to confirm the accessibilty on both mobile devices and desktops. 
 
-![LIGHTHOUSE-DESKTOP](./assets/images/lighthousedesk.png)
-![LIGHTHOUSE-MOBILE](./assets/images/lighthousemobile.png)
+![LIGHTHOUSE-DESKTOP](./assets/images/lighthouse-desktop.png)
+![LIGHTHOUSE-MOBILE](./assets/images/lighthouse-mobile.png)
 
 ## Unfixed bugs
 As of right now, there are no unfixed bugs.
