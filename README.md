@@ -50,7 +50,7 @@ I have used several technologies that have enabled this design to work:
 
 - I wanted the game to have a very simple design as I'm usually very fond of the simplistic approach.
 - As part of the quiz design, I added visual stat count so that the user will know when they have answered a question correctly and the number of questions inside the quiz. This instant feedback will allow them to learn as they play the quiz.
-The game has four major features:
+The game has four major features. I have provided screenshots to showcase the desktop version and also the mobile version:
 
 - The start game stage:
 ![stargame-desk](./assets/images/startgame-desk.png)
